@@ -13,7 +13,7 @@ def call(Map config = [:]) {
 
     //Native jenkins github plugin step
     checkout scmGit{
-        branches"[[name: branch]],
+        branches: [[name: branch]],
         userRemoteConfigs: [[credentialsId: credentials, url: repourl]]
     }
 }
