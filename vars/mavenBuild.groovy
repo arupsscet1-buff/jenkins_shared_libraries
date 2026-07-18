@@ -1,4 +1,4 @@
-def Call(Map config = [:]) {
+def call(Map config = [:]) {
     //Define defaults
     def goal = config.get('goal', 'clean package')
     def mavenTool = config.get('mavenVersion', 'M3')
