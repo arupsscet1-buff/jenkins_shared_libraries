@@ -6,5 +6,5 @@ def call(Map config = [:]) {
         -f docker/Dockerfile \
         --build-arg JAR_FILE=${svc}/target/${svc}*.jar \
         --build-arg EXPOSED_PORT=${port} \
-        -t sv1:latest .'
+        -t ${svc}:${BUILD_NUMBER} .'
 }
