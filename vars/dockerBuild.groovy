@@ -12,7 +12,7 @@ def call(Map config = [:]) {
     sh """
     docker build \
     -f docker/Dockerfile \
-    --build-arg ARTIFACT_NAME=${svc}/target/${svc}-${version}.jar \
+    --build-arg ARTIFACT_NAME=${svc}/target/${svc}-${version} \
     --build-arg EXPOSED_PORT=${port} \
     -t ${svc}:${env.BUILD_NUMBER} .
     """
