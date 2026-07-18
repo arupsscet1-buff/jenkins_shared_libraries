@@ -9,11 +9,11 @@ def call(Map config = [:]) {
         error "git checkout error, 'url' parameter is mandatory!"
     }
 
-    echo "Skipping manual config: Checking out branch '${branch}' from ${repoUrl}"
+    echo "Skipping manual config: Checking out branch '${branch}' from ${repourl}"
 
     //Native jenkins github plugin step
-    checkout scmGit{
+    checkout scmGit(
         branches: [[name: branch]],
         userRemoteConfigs: [[credentialsId: credentials, url: repourl]]
-    }
+    )
 }
