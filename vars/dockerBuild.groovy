@@ -1,6 +1,6 @@
 def call(Map config = [:]) {
-    def port = config.get('port': '')
-    def svc  = config.get('svc_name': '')
+    def port = config.get('port', '8080')
+    def svc  = config.get('svc_name', 'example-svc')
 
     def version = sh(
         script: 'mvn help:evaluate -Dexpression=project.version -q -DforceStdout',
@@ -12,8 +12,8 @@ def call(Map config = [:]) {
     sh """
     docker build \
     -f docker/Dockerfile \
-    --build-arg ARTIFACT_NAME=${svc}/target/${svc}-${version}*.jar \
+    --build-arg ARTIFACT_NAME=${svc}/target/${svc}-${version}.jar \
     --build-arg EXPOSED_PORT=${port} \
-    -t ${svc}:${BUILD_NUMBER} .
+    -t ${svc}:${env.BUILD_NUMBER} .
     """
 }
