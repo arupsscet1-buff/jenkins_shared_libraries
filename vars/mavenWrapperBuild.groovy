@@ -1,6 +1,5 @@
 def call(Map config = [:]) {
     //Define defaults
-    def goal = config.get('goal', 'clean package')
     def projectList = config.get('projectList', '')
     def skipTests = config.get('skipTests', false)
     def sonarServer = config.get('sonarServer', 'SonarQube-Server')
