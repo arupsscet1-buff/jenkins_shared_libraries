@@ -30,12 +30,12 @@ def call(Map config = [:]) {
     // def mvnBuildCmd = "./mvnw clean verify ${plFlag}" + (skipTests ? " -DskipTests" : "")
 
     echo "Running Application Build Pipeline..."
-    whoami
+    sh 'whoami'
     echo $HOME
-    mvn -version
-    pwd
+    sh 'mvn -version'
+    sh 'pwd'
     sh mvnBuildCmd
-    find /root -maxdepth 2
+    sh 'find /root -maxdepth 2'
 
 
     // ==========================================
