@@ -35,7 +35,7 @@ def call(Map config = [:]) {
     sh 'mvn -version'
     sh 'pwd'
     sh mvnBuildCmd
-    sh 'find /root -maxdepth 2'
+    sh 'ls -l /root/.m2/repository/org/springframework/boot/spring-boot-starter-parent/4.0.1'
 
 
     // ==========================================
