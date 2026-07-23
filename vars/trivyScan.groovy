@@ -1,3 +1,6 @@
 def call(Map config = [:]) {
-    sh 'trivy fs --severity HIGH,CRITICAL .'
+    sh 'trivy fs \
+          --offline-scan \
+          --severity HIGH,CRITICAL \
+          .'
 }
