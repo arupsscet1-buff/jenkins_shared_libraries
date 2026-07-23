@@ -30,12 +30,7 @@ def call(Map config = [:]) {
     // def mvnBuildCmd = "./mvnw clean verify ${plFlag}" + (skipTests ? " -DskipTests" : "")
 
     echo "Running Application Build Pipeline..."
-    sh 'whoami'
-    sh 'echo $HOME'
-    sh 'mvn -version'
-    sh 'pwd'
     sh mvnBuildCmd
-    sh 'ls -l /root/.m2/repository/org/springframework/boot/spring-boot-starter-parent/4.0.1'
 
 
     // ==========================================
