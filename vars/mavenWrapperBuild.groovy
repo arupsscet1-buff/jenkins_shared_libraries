@@ -31,7 +31,7 @@ def call(Map config = [:]) {
 
     echo "Running Application Build Pipeline..."
     sh 'whoami'
-    echo $HOME
+    sh 'echo $HOME'
     sh 'mvn -version'
     sh 'pwd'
     sh mvnBuildCmd
